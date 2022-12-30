@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "goblins",
+  "info": {
+    "singularName": "goblin",
+    "pluralName": "goblins",
+    "displayName": "goblin",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "src": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "stats": {
+      "displayName": "stats",
+      "type": "component",
+      "repeatable": false,
+      "component": "params.stats"
+    },
+    "mainParam": {
+      "type": "enumeration",
+      "enum": [
+        "Ловкость",
+        "Интеллект",
+        "Сила"
+      ]
+    },
+    "items": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::item.item",
+      "inversedBy": "goblins"
+    },
+    "stats_increase": {
+      "displayName": "Прирост статов за уровень",
+      "type": "component",
+      "repeatable": false,
+      "component": "params.prirost-statov-za-uroven"
+    }
+  }
+}

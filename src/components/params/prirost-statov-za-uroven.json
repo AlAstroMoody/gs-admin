@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_params_prirost_statov_za_uroven",
+  "info": {
+    "displayName": "Прирост статов за уровень",
+    "icon": "angry",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "strength": {
+      "type": "decimal"
+    },
+    "agility": {
+      "type": "decimal"
+    },
+    "intelligence": {
+      "type": "decimal"
+    },
+    "ms": {
+      "type": "integer"
+    },
+    "as": {
+      "type": "decimal"
+    },
+    "as_max": {
+      "type": "decimal"
+    }
+  }
+}

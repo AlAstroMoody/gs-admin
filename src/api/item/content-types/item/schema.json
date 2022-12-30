@@ -1,0 +1,78 @@
+{
+  "kind": "collectionType",
+  "collectionName": "items",
+  "info": {
+    "singularName": "item",
+    "pluralName": "items",
+    "displayName": "Item",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "level": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "string"
+    },
+    "goblins": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::goblin.goblin",
+      "mappedBy": "items"
+    },
+    "params": {
+      "displayName": "params",
+      "type": "component",
+      "repeatable": false,
+      "component": "item-params.params"
+    },
+    "parents": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::item.item",
+      "inversedBy": "children"
+    },
+    "children": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::item.item",
+      "inversedBy": "parents"
+    },
+    "src": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "boss": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::boss.boss",
+      "inversedBy": "items"
+    },
+    "craft": {
+      "type": "enumeration",
+      "enum": [
+        "Великая кузница",
+        "Ангельская кузница",
+        "Демоническая кузница",
+        "Вневременная кузня"
+      ]
+    },
+    "count": {
+      "type": "json"
+    }
+  }
+}

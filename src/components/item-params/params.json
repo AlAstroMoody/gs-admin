@@ -1,0 +1,71 @@
+{
+  "collectionName": "components_item_params_params",
+  "info": {
+    "displayName": "Параметры",
+    "icon": "dice-three",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "agility": {
+      "type": "integer"
+    },
+    "intelligence": {
+      "type": "integer"
+    },
+    "strength": {
+      "type": "integer"
+    },
+    "resist": {
+      "type": "integer"
+    },
+    "luck": {
+      "type": "integer"
+    },
+    "hp": {
+      "type": "integer"
+    },
+    "mp": {
+      "type": "integer"
+    },
+    "attack": {
+      "type": "integer"
+    },
+    "defence": {
+      "type": "integer"
+    },
+    "as": {
+      "type": "integer"
+    },
+    "ms": {
+      "type": "integer"
+    },
+    "hp_regeneration": {
+      "type": "integer"
+    },
+    "mp_regeneration": {
+      "type": "integer"
+    },
+    "visibility": {
+      "type": "integer"
+    },
+    "evade": {
+      "type": "integer"
+    },
+    "manaburn": {
+      "type": "integer"
+    },
+    "aura": {
+      "type": "string"
+    },
+    "active": {
+      "type": "string"
+    },
+    "distant_resist": {
+      "type": "integer"
+    },
+    "stealth_detection": {
+      "type": "integer"
+    }
+  }
+}
