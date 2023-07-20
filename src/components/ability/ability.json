@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_ability_abilities",
+  "info": {
+    "displayName": "ability",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    }
+  }
+}

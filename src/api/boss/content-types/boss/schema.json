@@ -25,14 +25,21 @@
       "mappedBy": "boss"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "ability": {
+      "displayName": "ability",
+      "type": "component",
+      "repeatable": true,
+      "component": "ability.ability"
     }
   }
 }

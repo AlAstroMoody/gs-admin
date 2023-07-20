@@ -9,7 +9,15 @@ const { createCoreController } = require("@strapi/strapi").factories;
 module.exports = createCoreController("api::item.item", ({ strapi }) => ({
   async get(ctx) {
     let items = await strapi.entityService.findMany("api::item.item", {
-      fields: ["name", "level", "description", "craft", "count"],
+      fields: [
+        "name",
+        "level",
+        "description",
+        "craft",
+        "count",
+        "max_count",
+        "rare",
+      ],
       populate: {
         params: {
           fields: [
@@ -44,7 +52,6 @@ module.exports = createCoreController("api::item.item", ({ strapi }) => ({
         goblins: { fields: ["name"] },
       },
     });
-
     for (const item of items) {
       item.src = item.src?.url;
       item.level = item.level || 0;
@@ -59,6 +66,9 @@ module.exports = createCoreController("api::item.item", ({ strapi }) => ({
           delete item.params[param];
         }
       }
+      item.parents.forEach((parent) =>
+        parent.count ? null : delete parent.count
+      );
     }
     return items;
   },

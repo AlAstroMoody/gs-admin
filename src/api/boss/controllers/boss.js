@@ -13,6 +13,7 @@ module.exports = createCoreController("api::boss.boss", ({ strapi }) => ({
       populate: {
         // image: { fields: ["url"] },
         items: { fields: ["name"] },
+        ability: "*",
       },
     });
   },

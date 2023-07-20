@@ -73,6 +73,12 @@
     },
     "count": {
       "type": "json"
+    },
+    "rare": {
+      "type": "boolean"
+    },
+    "max_count": {
+      "type": "integer"
     }
   }
 }
