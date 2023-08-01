@@ -17,6 +17,7 @@ module.exports = createCoreController("api::item.item", ({ strapi }) => ({
         "count",
         "max_count",
         "rare",
+        "source",
       ],
       populate: {
         params: {
