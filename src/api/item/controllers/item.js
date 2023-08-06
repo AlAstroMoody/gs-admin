@@ -9,6 +9,7 @@ const { createCoreController } = require("@strapi/strapi").factories;
 module.exports = createCoreController("api::item.item", ({ strapi }) => ({
   async get(ctx) {
     let items = await strapi.entityService.findMany("api::item.item", {
+      filters: { publishedAt: { $notNull: true } },
       fields: [
         "name",
         "level",
@@ -42,20 +43,35 @@ module.exports = createCoreController("api::item.item", ({ strapi }) => ({
             "active",
             "distant_resist",
             "stealth_detection",
+            "critical_chance",
+            "critical_value",
+            "block_chance",
+            "block_value",
+            "hidden_regen",
           ],
         },
         parents: {
+          filters: { publishedAt: { $notNull: true } },
           fields: ["name", "count"],
         },
-        children: { fields: ["name"] },
+        children: {
+          filters: { publishedAt: { $notNull: true } },
+          fields: ["name"],
+        },
         src: { fields: ["url"] },
         boss: { fields: ["name", "wave"] },
         goblins: { fields: ["name"] },
       },
     });
+
     for (const item of items) {
+      // await strapi.entityService.update("api::item.item", item.id, {
+      //   data: {
+      //     publishedAt: null,
+      //   },
+      // });
+
       item.src = item.src?.url;
-      item.level = item.level || 0;
       item.goblins = item.goblins.map((g) => g.name);
       for (const property in item) {
         if (!item[property]) {

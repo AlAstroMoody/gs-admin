@@ -66,6 +66,23 @@
     },
     "stealth_detection": {
       "type": "integer"
+    },
+    "critical_chance": {
+      "type": "integer",
+      "default": 0
+    },
+    "critical_value": {
+      "type": "decimal",
+      "default": 0
+    },
+    "block_chance": {
+      "type": "integer"
+    },
+    "block_value": {
+      "type": "integer"
+    },
+    "hidden_regen": {
+      "type": "integer"
     }
   }
 }
