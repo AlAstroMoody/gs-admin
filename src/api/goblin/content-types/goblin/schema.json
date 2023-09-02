@@ -55,6 +55,9 @@
       "type": "component",
       "repeatable": false,
       "component": "params.prirost-statov-za-uroven"
+    },
+    "names": {
+      "type": "text"
     }
   }
 }
