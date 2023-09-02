@@ -50,6 +50,10 @@ module.exports = createCoreController("api::item.item", ({ strapi }) => ({
             "hidden_regen",
           ],
         },
+        notUsed: {
+          filters: { publishedAt: { $notNull: true } },
+          fields: ["name"],
+        },
         parents: {
           filters: { publishedAt: { $notNull: true } },
           fields: ["name", "count"],
