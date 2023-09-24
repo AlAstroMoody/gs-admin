@@ -83,6 +83,9 @@
     },
     "hidden_regen": {
       "type": "integer"
+    },
+    "mp_regen": {
+      "type": "integer"
     }
   }
 }
